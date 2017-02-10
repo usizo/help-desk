@@ -1,5 +1,5 @@
 import React from 'react';
-// import {Link} from 'react-router';
+import {router} from 'react-router';
 
 export default class MainPage extends React.Component {
     constructor() {
@@ -9,6 +9,7 @@ export default class MainPage extends React.Component {
         return (
             <div>
                 <h1>MAIN PAGE</h1> 
+                <button onClick={this.props.redirect}>helloooo</button>
             </div>
         )
     }

@@ -7,7 +7,7 @@ export default class Signup extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="signup">
                 <h1> SIGNUP </h1>
                 <button><Link to='/main_page'>Sign Up</Link></button>
             </div>

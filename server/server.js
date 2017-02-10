@@ -12,6 +12,14 @@ app.use(bodyParser.json());
 
 app.get('/users', userController.getUsers);
 
+app.get('/auth/github', (req, res) => {
+    //check for cookie
+    //if cookie send login info
+    res.status(200).json({login:'jin'});
+    //otherwise oauth authorization
+    //then send login info
+})
+
 app.listen(3000);
 
 module.exports = app;
