@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default class Login extends React.Component {
     constructor() {
@@ -8,7 +9,7 @@ export default class Login extends React.Component {
         return (
             <div>
                 <h1>LOGIN</h1>
-                <button><Link to='/signup'>Sign Up</Link></button>
+                <button><Link to='/signup'>{this.props.login}</Link></button>
                 <button><Link to='/main_page'>Log In</Link></button>
             </div>
         )

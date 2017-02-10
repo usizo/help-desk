@@ -21,9 +21,11 @@ const User = connection.define('users', {
   },
 });
 
+
 User.sync({
   // remove when tables solidified
   force: true,
+
 });
 
 module.exports = User;
