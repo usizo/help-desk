@@ -4,14 +4,11 @@ import Signup from './signup.jsx';
 import MainPage from './main-page.jsx';
 
 export default class App extends React.Component {
-    constructor() {
-        super();
-        this.state = {};
-    }
     render() {
         return (
             <div>
-                
+                <h1>HELLO</h1>
+                {/*{this.props.children}*/}
             </div>
         )
     }
