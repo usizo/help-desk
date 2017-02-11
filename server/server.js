@@ -1,11 +1,10 @@
 
-var express = require('express');
-var path = require('path');
-var $ = require('jquery');
+const express = require('express');
+const path = require('path');
 const bodyParser = require('body-parser');
 const userController = require('./controllers/userController');
 
-var app = express();
+const app = express();
 
 app.use(express.static(path.join(__dirname, '..')));
 

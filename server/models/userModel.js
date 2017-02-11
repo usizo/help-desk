@@ -1,11 +1,29 @@
-const pg = require('pg');
+const Sequelize = require('sequelize');
+const connection = require('../pgConnection');
+const bcrypt = require('bcryptjs');
 
-const db = {};
-const uri = 'postgres://pongconx:123456@localhost/pongconx';
-
-pg.connect(uri, (err, db_) => {
-  //if (err) throw new Error(err);
-  db.conn = db_;
+const User = connection.define('users', {
+  username: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+  password: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+}, {
+  hooks: {
+    afterValidate: (user) => {
+      user.password = bcrypt.hashSync(user.password, 8);
+    },
+  },
 });
 
-module.exports = db;
+User.sync(
+  // // add to delete ALL info, remove when tables solidified
+  // {
+  //   force: true,
+  // },
+);
+
+module.exports = User;
