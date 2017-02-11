@@ -6,7 +6,7 @@ export default class MyQuestion extends React.Component {
     }
     render() {
         return (
-            <div className="my-question">
+            <div className="my-question" onClick={this.props.setSelectedQuestionChat.bind(null, this.props.id)}>
                 <div className="who-when">
                     <h1>{this.props.userName}</h1>
                     <h2>{this.props.created_at}</h2>

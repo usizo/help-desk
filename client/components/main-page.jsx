@@ -13,7 +13,11 @@ export default class MainPage extends React.Component {
     render() {
         return (
             <div>
-                <QuestionsWindow questions={this.props.questions} userName={this.props.userName}/>
+                <QuestionsWindow 
+                    questions={this.props.questions} 
+                    userName={this.props.userName}
+                    setSelectedQuestionChat={this.props.setSelectedQuestionChat}
+                />
                 <ImageWindow />
                 <ChatWindow userName={this.props.userName} chatMessages={this.props.chatMessages}/>
             </div>
