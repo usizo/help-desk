@@ -73,7 +73,7 @@ export default class App extends React.Component {
     }, (response) => {
       this.getQuestions();
       this.getMessages();
-    })
+    });
     this.setState({ chatInput: '' })
   }
   newQuestionInputHandler(e) {
@@ -101,7 +101,7 @@ export default class App extends React.Component {
       console.log(response);
       this.getQuestions();
     });
-    this.setState( {newQuestionInput: '' })
+    this.setState({ newQuestionInput: '' })
   }
   gitHubLogin() {
     $.get('/auth/github', (response) => {
