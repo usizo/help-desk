@@ -1,8 +1,6 @@
 const Sequelize = require('sequelize');
 const connection = require('../pgConnection');
 const bcrypt = require('bcryptjs');
-// use in case bcryptjs is too slow
-// const bcrypt = require('bcrypt');
 
 const User = connection.define('users', {
   username: {
@@ -21,11 +19,11 @@ const User = connection.define('users', {
   },
 });
 
-
-User.sync({
-  // remove when tables solidified
-  force: true,
-
-});
+User.sync(
+  // // add to delete ALL info, remove when tables solidified
+  // {
+  //   force: true,
+  // },
+);
 
 module.exports = User;
