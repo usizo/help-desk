@@ -2,7 +2,7 @@ const Message = require('../models/messageModel');
 
 function getMessages(req, res) {
   Message.findAll({
-    order: '"createdAt" DESC',
+    order: '"createdAt" ASC',
   }).then(messages => res.send(messages));
 }
 

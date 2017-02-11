@@ -7,13 +7,17 @@ export default class QuestionWindow extends React.Component {
         const questions = [];
         for (var key in this.props.questions) {
             if (this.props.userName === this.props.questions[key].userName) {
-                questions.push(<MyQuestion 
+                questions.push(<MyQuestion
+                setSelectedQuestionChat={this.props.setSelectedQuestionChat}
+                id={this.props.questions[key].id}
                 userName={this.props.questions[key].userName}
                 created_at={this.props.questions[key].created_at}
                 question={this.props.questions[key].question}
             />)
             } else {
-                questions.push(<Question 
+                questions.push(<Question
+                    setSelectedQuestionChat={this.props.setSelectedQuestionChat}
+                    id={this.props.questions[key].id}
                     userName={this.props.questions[key].userName}
                     created_at={this.props.questions[key].created_at}
                     question={this.props.questions[key].question}
@@ -22,7 +26,12 @@ export default class QuestionWindow extends React.Component {
         }
         return (
             <div className="questions-window">
+              <div>
+                <center><h1>QUESTIONS</h1></center>
+              </div>
+              <div className="questions-body">
                 {questions}
+              </div>
             </div>
         )
     }
