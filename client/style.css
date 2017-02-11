@@ -1,0 +1,186 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  color: #fff;
+}
+
+select {
+    /*-webkit-appearance: button;
+    -moz-appearance: button;
+    -webkit-user-select: none;
+    -moz-user-select: none;*/
+    -webkit-padding-end: 20px;
+    -moz-padding-end: 20px;
+    -webkit-padding-start: 2px;
+    -moz-padding-start: 2px;
+    background-color: #7b9db7; /* fallback color if gradients are not supported */
+    background-position: center right;
+    background-repeat: no-repeat;
+    border: 1px solid #AAA;
+    border-radius: 5px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-size: inherit;
+    margin: 0;
+    overflow: hidden;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+input {
+  width: 100px;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  /*-webkit-padding-end: 10px;
+  -moz-padding-end: 10px;*/
+  -webkit-padding-start: 2px;
+  -moz-padding-start: 2px;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-position: center right;
+  background-repeat: no-repeat;
+  border: 1px solid #AAA;
+  border-radius: 2px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font-size: inherit;
+  margin: 0;
+  overflow: hidden;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  /*text-overflow: ellipsis;*/
+  white-space: nowrap;
+  text-align: center;
+}
+
+.menu {
+  height: 100px;
+  text-align: center;
+  background: linear-gradient(to bottom, #7b9db7 , black);
+  font-size: 50px;
+  color: #fff;
+  line-height: 100px;
+}
+
+.small-text {
+  position: relative;
+  top: -20px;
+  font-size: 20px;
+}
+
+.main {
+  padding-top: 200px;
+  height: 600px;
+  background-color: white;
+}
+
+.table {
+  background-image: url("images/pong_table.jpg");
+  background-size: cover;
+  width: 800px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.side {
+  position: relative;
+  top: -10px;
+  width: 50%;
+  height: 300px;
+  display: inline-block;
+  /*border: 5px solid #fff;
+  box-sizing: border-box;*/
+}
+
+.dropdown {
+  position: relative;
+  top: -50px;
+  padding-top: 0px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.user {
+  position: relative;
+  top: -40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 50%;
+  margin: 0 auto;
+  border: 1px solid #fff;
+  padding: 10px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.user > div {
+  position: relative;
+  width: 100%;
+}
+
+.user-info{
+  text-align: right;
+  padding-right: 10px;
+  float: left;
+  width: 50px;
+}
+
+.score {
+  position: relative;
+  top: -30px;
+  padding: 0px;
+  text-align: center;
+}
+
+.btn {
+  position: relative;
+  top: -50px;
+  /*padding: 100px;*/
+  margin: 0 auto;
+  text-align: center;
+}
+
+.myButton {
+	-moz-box-shadow: 0px 10px 14px -7px #7b9db7;
+	-webkit-box-shadow: 0px 10px 14px -7px #7b9db7;
+	box-shadow: 0px 10px 14px -7px #7b9db7;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #4d6475), color-stop(1, #7b9db7));
+	background:-moz-linear-gradient(top, #4d6475 5%, #7b9db7 100%);
+	background:-webkit-linear-gradient(top, #4d6475 5%, #7b9db7 100%);
+	background:-o-linear-gradient(top, #4d6475 5%, #7b9db7 100%);
+	background:-ms-linear-gradient(top, #4d6475 5%, #7b9db7 100%);
+	background:linear-gradient(to bottom, #4d6475 5%, #7b9db7 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4d6475', endColorstr='#7b9db7',GradientType=0);
+	background-color:#4d6475;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #7b9db7;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7b9db7), color-stop(1, #4d6475));
+	background:-moz-linear-gradient(top, #7b9db7 5%, #4d6475 100%);
+	background:-webkit-linear-gradient(top, #7b9db7 5%, #4d6475 100%);
+	background:-o-linear-gradient(top, #7b9db7 5%, #4d6475 100%);
+	background:-ms-linear-gradient(top, #7b9db7 5%, #4d6475 100%);
+	background:linear-gradient(to bottom, #7b9db7 5%, #4d6475 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7b9db7', endColorstr='#4d6475',GradientType=0);
+	background-color:#7b9db7;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
