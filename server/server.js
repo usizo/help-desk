@@ -5,7 +5,7 @@ var $ = require('jquery');
 const bodyParser = require('body-parser');
 const userController = require('./controllers/userController');
 
-var app = express();
+const app = express();
 
 app.use(express.static(path.join(__dirname, '..')));
 
