@@ -6,8 +6,7 @@ function getUsers(req, res) {
 
   User.findAll().then((questions) => {
     console.log('qFromDB', questions);
-
-    res.send(questions);
+    return res.send(questions);
   });
 
   // return next();
@@ -20,9 +19,9 @@ function addUser(req, res) {
   User.create({
     username: req.body.username,
     password: req.body.password,
-  });
-
-  res.send('User added');
+  })
+  .then(() => res.send('User added'))
+  .catch(err => res.send(err));
 
   // return next();
 }
