@@ -1,29 +1,26 @@
 const Sequelize = require('sequelize');
 const connection = require('../pgConnection');
 
-const Question = connection.define('questions', {
-  question: {
+const Message = connection.define('messages', {
+  questionId: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
+  user: {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  asker: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
-  file: {
+  message: {
     type: Sequelize.TEXT,
-  },
-  answered: {
-    type: Sequelize.BOOLEAN,
-    defaultValue: false,
+    allowNull: false,
   },
 });
 
-Question.sync(
+Message.sync(
   // {
   //   // remove when tables solidified
   //   force: true,
   // }
 );
 
-module.exports = Question;
+module.exports = Message;

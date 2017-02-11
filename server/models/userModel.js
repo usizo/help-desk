@@ -23,7 +23,7 @@ User.sync(
   // // add to delete ALL info, remove when tables solidified
   // {
   //   force: true,
-  // },
+  // }
 );
 
 module.exports = User;
