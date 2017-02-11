@@ -18,6 +18,7 @@ export default class MainPage extends React.Component {
                     userName={this.props.userName}
                     postNewQuestion={this.props.postNewQuestion}
                     setSelectedQuestionChat={this.props.setSelectedQuestionChat}
+                    newQuestionInputHandler={this.props.newQuestionInputHandler}
                 />
                 <ImageWindow />
                 <ChatWindow 
