@@ -1,62 +1,107 @@
 body {
-    
+  margin: 0px;
+  padding: 0px;
+  color: #fff;
+  background: #000;
 }
 
 .questions-window {
+    padding: 10px;
+    box-sizing: border-box;
     width: 30%;
     height:100%;
     float:left;
+    background: #000;
 }
-.chat-window {
-    width:30%;
-    height:100%;
-    float:left;
-    background-color:blue;
+.question-header {
+  position: relative;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  /*background: #465381;*/
+  background: #920f0f;
+  height: 30px;
+  width: 100%;
 }
-.image-window {
-    width:40%;
-    height:100%;
-    float:left;
-    background-color: green;
+.questions-body {
+  height: 80%;
+  overflow: scroll;
+  color: #000;
 }
 .question {
-    width:100%;
-    height:60px;
-    margin-bottom:8px;
-    background-color:lightgrey;
+  position: relative;
+  width: 100%;
+  min-height:100px;
+  margin: 5px auto;
+  background-color: #fff;
+  border-radius: 5px;
 }
 .my-question {
-    width:100%;
-    height:60px;
-    margin-bottom:8px;
-    background-color:lightcoral;
+  position: relative;
+  width: 100%;
+  min-height:100px;
+  margin: 5px auto;
+  background-color: #eee;
+  border-radius: 5px;
 }
-.resolve {
-    display:block;
-    background-color:lightgrey;
-    padding:5px;
-    border-radius:5px;
-    float:left;
-    text-align:center;
-    line-height:20px;
+.asker {
+  position: relative;
+  text-align: left;
+  float: left;
+  width: 50%;
+  color: #fff;
 }
-.who-when {
-    clear:left;
-    float:left;
-    width:30%;
-}
-.who-when h1, .who-when h2 {
-    overflow:hidden;
-    font-size: 15px;
+.question-time {
+  position: relative;
+  float: left;
+  text-align: right;
+  width: 50%;
+  color: #fff;
 }
 .user-question {
-    float:left; 
-    width:65%;
-    font-size:15px;
-    overflow:auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+    /*float:left;*/
+    width:100%;
+    font-size:20px;
+    /*overflow:auto;*/
 }
 .user-question p {
     float:left;
+}
+.new-question {
+
+}
+.new-question > form {
+  
+}
+.resolve {
+  display:block;
+  background-color:lightgrey;
+  padding:5px;
+  border-radius:5px;
+  float:left;
+  text-align:center;
+  line-height:20px;
+}
+.image-window {
+  display: none;
+  width:40%;
+  height:100%;
+  float:left;
+  background-color: green;
+}
+.chat-window {
+  padding: 10px;
+  box-sizing: border-box;
+  width: 30%;
+  height:100%;
+  float:right;
+  background: #000;
+  overflow: scroll;
 }
 .chat-box {
     height:600px;

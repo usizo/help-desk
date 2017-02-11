@@ -39,7 +39,7 @@ export default class App extends React.Component {
           id: question.id,
           userName: question.asker,
           question: question.question,
-          created_at: question.createdAt,
+          created_at: question.createdAt.slice(11, 16),
           chatMessages: [],
         }
       })
@@ -54,7 +54,7 @@ export default class App extends React.Component {
           temp[message.questionid].chatMessages.push({
             userName: message.username,
             message: message.message,
-            created_at: message.createdAt
+            created_at: message.createdAt.slice(11, 16),
           })
         }
       });
