@@ -1,7 +1,9 @@
 const Question = require('../models/questionModel');
 
 function getQuestions(req, res) {
-  Question.findAll().then(questions => res.send(questions));
+  Question.findAll({
+    order: '"createdAt" DESC',
+  }).then(questions => res.send(questions));
 }
 
 function addQuestion(req, res) {

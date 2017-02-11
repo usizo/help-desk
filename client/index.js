@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/curt-App.jsx';
+import App from './components/app.jsx';
 
 ReactDOM.render(<App />, document.getElementById('app'));

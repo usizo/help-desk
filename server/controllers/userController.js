@@ -1,29 +1,40 @@
 const User = require('../models/userModel');
+const bcrypt = require('bcryptjs');
 
 function getUsers(req, res) {
-  console.log('gU', req);
-  console.log('gU', res);
-
-  User.findAll().then((questions) => {
-    console.log('qFromDB', questions);
-    return res.send(questions);
-  });
-
-  // return next();
+  User.findAll({
+    order: '"username" DESC',
+  }).then(questions => res.send(questions));
 }
 
 function addUser(req, res) {
   console.log('aU', req.body);
-  console.log('aU', res.body);
-
   User.create({
     username: req.body.username,
     password: req.body.password,
-  })
-  .then(() => res.send('User added'))
-  .catch(err => res.send(err));
+  });
+  res.cookie('user', req.body.username) //need to make this more secure, also add maxAge;
+  res.redirect('/');
 
   // return next();
 }
+function verifyUser(req, res) {
+  console.log('vU', req);
+  //const username = req.body.username;
+  //const password = req.body.password;
+  User.findOne({ where: {username: req.body.username}}).then((result) => {
+    console.log('result is ', result)
+    if(result !== null && bcrypt.compareSync(req.body.password, result.password)) {
+        //sessionController.startSession(result);
+        //cookieController.setSSIDCookie(req, res, result);
+        res.cookie('user', req.body.username) //need to make this more secure;
+        res.redirect('/');
+        //res.redirect('/secret');
+    } else {
+      res.redirect('/login');
+      //res.redirect('/signup');
+    }
+  });
+}
 
-module.exports = { getUsers, addUser };
+module.exports = {addUser, verifyUser, getUsers};
