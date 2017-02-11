@@ -5,7 +5,6 @@ import ChatMsg from './chat-msg.jsx';
 export default class ChatWindow extends React.Component {
     constructor(props) {
         super(props);
-        console.log('ChatWindow:', this.props);
     }
     render() {
         let messages = [];

@@ -9,7 +9,7 @@ export default class Login extends React.Component {
         return (
             <div className="login">
                 <h1>LOGIN</h1>
-                <button><Link to='/signup'>{this.props.login}</Link></button>
+                <button><Link to='/main_page'>MAIN</Link></button>
                 <button onClick={this.props.github}>GitHub Login</button>
             </div>
         )

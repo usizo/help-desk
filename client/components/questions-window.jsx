@@ -3,9 +3,6 @@ import Question from './question.jsx';
 import MyQuestion from './my-question.jsx';
 
 export default class QuestionWindow extends React.Component {
-    constructor() {
-        super()
-    }
     render() {
         const questions = [];
         for (var key in this.props.questions) {
