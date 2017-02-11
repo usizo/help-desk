@@ -8,7 +8,6 @@ export default class ChatWindow extends React.Component {
     }
     render() {
         let messages = [];
-        console.log(this.props.chatMessages);
         this.props.chatMessages.forEach((message) => {
             if (this.props.userName === message.userName) {
                 messages.push(<MyChatMsg 

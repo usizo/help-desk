@@ -16,10 +16,18 @@ export default class MainPage extends React.Component {
                 <QuestionsWindow 
                     questions={this.props.questions} 
                     userName={this.props.userName}
+                    postNewQuestion={this.props.postNewQuestion}
                     setSelectedQuestionChat={this.props.setSelectedQuestionChat}
                 />
                 <ImageWindow />
-                <ChatWindow userName={this.props.userName} chatMessages={this.props.chatMessages}/>
+                <ChatWindow 
+                    userName={this.props.userName} 
+                    chatMessages={this.props.chatMessages}
+                    id={this.props.selectedQuestionId}
+                    chatInputHandler={this.props.chatInputHandler}
+                    chatInput={this.props.chatInput}
+                    postMessage={this.props.postMessage}
+                />
             </div>
         )
     }

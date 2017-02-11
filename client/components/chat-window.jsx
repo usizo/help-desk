@@ -9,8 +9,8 @@ export default class ChatWindow extends React.Component {
         return (
             <div className="chat-window">
                 <ChatBox userName={this.props.userName} chatMessages={this.props.chatMessages}/>
-                <form>
-                    <input type='text'></input>
+                <form onSubmit={this.props.postMessage.bind(null, this.props.id)}>
+                    <input type='text' placeholder="Write something..." value={this.props.chatInput} onChange={this.props.chatInputHandler}></input>
                 </form>
             </div>
         )
