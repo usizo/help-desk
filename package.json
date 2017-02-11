@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "nodemon server/server.js",
-    "start": "webpack-dev-server --inline --content-base .",
+    "start": "nodemon server/server.js",
     "watch": "webpack -w ./src/index.js ./client/bundle.js",
     "build": "webpack ./src/index.js ./client/bundle.js"
   },
