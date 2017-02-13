@@ -67,7 +67,8 @@ app.get('/auth/github/callback', (req, res) => {
         };
         request(options, (err, resp, body) => {
             console.log('step 3');
-            res.send(body);
+            //res.send(body);
+            res.redirect('/');
         });
     })
 })

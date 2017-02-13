@@ -29,7 +29,52 @@ export default class App extends React.Component {
     this.newQuestionInputHandler = this.newQuestionInputHandler.bind(this);
     this.postMessage = this.postMessage.bind(this);
     this.postNewQuestion = this.postNewQuestion.bind(this);
+    this.handleSignUp = this.handleSignUp.bind(this);
+    this.handleLogIn = this.handleLogIn.bind(this);
   }
+
+  handleSignUp (event) {
+      event.preventDefault();
+      var username = document.signUp.username.value
+      var password = document.signUp.password.value
+      //alert(form.elements[0]['username'].value);
+      $.ajax({
+        url: '/signup/',
+        type: 'POST',
+        data: JSON.stringify({username, password}),
+        contentType: "application/json; charset=utf-8",
+        success: (data) => {
+            console.log(data);
+            console.log(typeof data);
+            if(data.status === 'success') {
+              this.setState({userName: data.username})
+
+              browserHistory.push('/main_page');
+            }
+        }
+      });
+
+     };
+
+  handleLogIn (event) {
+        event.preventDefault();
+        var username = document.logIn.username.value
+        var password = document.logIn.password.value
+        $.ajax({
+          url: '/login/',
+          type: 'POST',
+          data: JSON.stringify({username, password}),
+          contentType: "application/json; charset=utf-8",
+          success: (data) => {
+              if(data.status === 'success') {
+                this.setState({userName: data.username})
+
+                browserHistory.push('/main_page');
+              }
+          }
+        })
+
+      };
 
   getQuestions() {
     $.get('/questions', (response) => {
@@ -113,8 +158,8 @@ export default class App extends React.Component {
   render() {
     return (
       <Router history={browserHistory}>
-        <Route path="/" component={() => <Login github={this.gitHubLogin} />} />
-        <Route path="/signup" component={() => <Signup />} />
+        <Route path="/" component={() => <Login handleLogIn = {this.handleLogIn} />} />
+        <Route path="/signup" component={() => <Signup handleSignUp = {this.handleSignUp} />} />
         <Route path="/main_page" component={() => <MainPage
           questions={this.state.questions}
           getQuestions={this.getQuestions}

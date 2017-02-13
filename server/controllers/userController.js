@@ -8,32 +8,30 @@ function getUsers(req, res) {
 }
 
 function addUser(req, res) {
-  console.log('aU', req.body);
-  User.create({
-    username: req.body.username,
-    password: req.body.password,
-  });
-  res.cookie('user', req.body.username) //need to make this more secure, also add maxAge;
-  res.redirect('/');
-
-  // return next();
+  console.log('in add user');
+  
+  //need error for if user already exists
+  if(req.body.username && req.body.password) {
+    User.create({
+      username: req.body.username,
+      password: req.body.password,
+    });
+    res.cookie('user', req.body.username) //need to make this more secure
+    res.json({status: 'success', username: req.body.username}); //need to add sessions
+  }
 }
+    
+
 function verifyUser(req, res) {
-  console.log('vU', req);
-  //const username = req.body.username;
-  //const password = req.body.password;
+  console.log('in verify')
   User.findOne({ where: {username: req.body.username}}).then((result) => {
     console.log('result is ', result)
     if(result !== null && bcrypt.compareSync(req.body.password, result.password)) {
-        //sessionController.startSession(result);
-        //cookieController.setSSIDCookie(req, res, result);
-        res.cookie('user', req.body.username) //need to make this more secure;
-        res.redirect('/');
-        //res.redirect('/secret');
+        res.cookie('user', req.body.username) //add sessions
+        res.json({status: 'success', username: req.body.username});
     } else {
-      res.redirect('/login');
-      //res.redirect('/signup');
-    }
+      res.redirect('/');
+    };
   });
 }
 

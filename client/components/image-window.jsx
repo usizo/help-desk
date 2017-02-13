@@ -7,7 +7,7 @@ export default class ImageWindow extends React.Component {
     render() {
         return (
             <div className="image-window">
-                IMAGES
+                
             </div>
         )
     }
